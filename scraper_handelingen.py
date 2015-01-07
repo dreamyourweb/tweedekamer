@@ -11,7 +11,7 @@ import urllib2
 
 
 for meet_numb in range(40,109):  
-    for i in range(1,40): 
+    for i in range(1,80): 
         print 'h-tk-20132014-%d-%d' % (meet_numb,i)
         response = urllib2.urlopen("https://zoek.officielebekendmakingen.nl/" +'h-tk-20132014-%d-%d.xml' % (meet_numb,i), 'h-tk-20132014-%d-%d' % (meet_numb,i)+".xml")
         if response.info().getheader('Content-Type') == "text/html":
@@ -22,10 +22,8 @@ for meet_numb in range(40,109):
             output.close()
 
 
-
-
 for meet_numb in range(1,34):  
-    for i in range(1,40): 
+    for i in range(1,80): 
         print 'h-tk-20142015-%d-%d' % (meet_numb,i)
         response = urllib2.urlopen("https://zoek.officielebekendmakingen.nl/" +'h-tk-20142015-%d-%d.xml' % (meet_numb,i), 'h-tk-20142015-%d-%d' % (meet_numb,i)+".xml")
         if response.info().getheader('Content-Type') == "text/html":
@@ -34,4 +32,5 @@ for meet_numb in range(1,34):
             output = open('data/h-tk-20142015-%d-%d' % (meet_numb,i)+".xml", 'wb')
             output.write(response.read())
             output.close()
+
 
